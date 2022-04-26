@@ -1,10 +1,15 @@
 import logo from './logo.svg';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     Component goes here
+      <AppBar>
+        <Toolbar>
+          <Typography variant='h5'>Trainers house</Typography>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }
