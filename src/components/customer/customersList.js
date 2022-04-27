@@ -27,8 +27,8 @@ function Customers () {
 
     //defining each column for ag-grid table component
     const [columns] = useState([
-        {headerName: 'Firstname', field: 'firstname', width: 150},
-        {headerName: 'Lastname', field: 'lastname', width: 150}, 
+        {headerName: 'First name', field: 'firstname', width: 150},
+        {headerName: 'Last name', field: 'lastname', width: 150}, 
         {headerName: 'Street address', field: 'streetaddress', width: 200}, 
         {headerName: 'Postal code', field: 'postcode', width: 200},
         {headerName: 'City', field: 'city', width: 150}, 
