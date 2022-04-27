@@ -16,12 +16,8 @@ function App() {
       <BrowserRouter>
       <AppBar>
         <Toolbar>
-          <Typography>
-            <Link to="/customers">Customers</Link>
-          </Typography>
-          <Typography>
-           <Link to="/trainings">Trainings</Link>
-          </Typography>
+          <Link to="/customers">Customers</Link>
+          <Link to="/trainings">Trainings</Link>
         </Toolbar>
       </AppBar>
         <Routes>
