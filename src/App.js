@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 import {
   BrowserRouter,
   Routes, 
@@ -7,26 +7,19 @@ import {
   Link
 } from 'react-router-dom'
 import './App.css';
-import Customers from './components/customer/customers';
-import Trainings from './components/training/trainings';
-import { color } from '@mui/system';
+import Customers from './components/customer/customersList';
+
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <AppBar>
-        <Toolbar>
-          <Link to="/customers" style={{textDecoration: 'none', margin: 'auto', color: 'white'}}>Customers</Link>
-          <Link to="/trainings" style={{textDecoration: 'none', margin: 'auto', color: 'white'}}>Trainings</Link>
-        </Toolbar>
-      </AppBar>
-        <Routes>
-          <Route exact path='/customers' element={<Customers />}/>
-          <Route exact path='/trainings' element={<Trainings />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <AppBar>
+      <Toolbar>
+        <Typography variant='h6'>Trainers house</Typography>
+      </Toolbar>
+    </AppBar>
+   <Customers />
+  </div>
   );
 }
 
