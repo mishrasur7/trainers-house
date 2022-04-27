@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { AgGridReact } from 'ag-grid-react';
+
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import "ag-grid-community/dist/styles/ag-theme-material.css";
 
@@ -36,7 +37,7 @@ function Customers () {
     ]); 
 
 
-
+    //displaying data in html page with ag-grid component
     return (
         <div className="ag-theme-material" style={{ height: 600, width: '90%', margin: 70}}>
             <AgGridReact
