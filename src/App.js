@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 import './App.css';
 import Customers from './components/customer/customersList';
+import Trainings from './components/training/trainingList';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Typography variant='h6'>Trainers house</Typography>
       </Toolbar>
     </AppBar>
-   <Customers />
+   <Trainings />
   </div>
   );
 }

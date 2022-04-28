@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useMemo} from "react";
 import { AgGridReact } from 'ag-grid-react';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -34,14 +34,20 @@ function Customers () {
         {headerName: 'City', field: 'city', width: 150}, 
         {headerName: 'Email', field: 'email', width: 200}, 
         {headerName: 'Phone number', field: 'phone', width: 200},
-    ]); 
+    ]);
+
+    //setting the common props for all columns
+    const defaultColumnProps = useMemo(() => ({
+        sortable: true,
+        filter: true
+    })); 
 
 
     //displaying data in html page with ag-grid component
     return (
         <div className="ag-theme-material" style={{ height: 600, width: '90%', margin: 70}}>
             <AgGridReact
-            defaultColDef={{ sortable: true, filter: true }}
+            defaultColDef={defaultColumnProps}
             columnDefs={columns}
             rowData={customers}
             pagination={true}
