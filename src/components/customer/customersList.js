@@ -6,6 +6,7 @@ import EditIcon from '@mui/icons-material/Edit'
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import "ag-grid-community/dist/styles/ag-theme-material.css";
+import AddCustomer from "./addCustomer";
 
 function Customers () {
     //array state to save all customers
@@ -68,6 +69,7 @@ function Customers () {
     return (
         <div className="ag-theme-material" style={{ height: 600, width: '90%', margin: 70}}>
             <h2>List of customers</h2>
+            <AddCustomer />
             <AgGridReact
             defaultColDef={defaultColumnProps}
             columnDefs={columns}
