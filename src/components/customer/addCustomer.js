@@ -6,6 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
+import Snackbar from '@mui/material/Snackbar';
 
 function AddCustomer( { addCustomer }) {
     //customer object state to save customer details
@@ -19,10 +20,10 @@ function AddCustomer( { addCustomer }) {
         phone: ''
     })
 
-    //open state for boolean values
+    //open state set to false
     const[open, setOpen] = useState(false); 
 
-    //setting open state to true upon clicking the button
+    //sets open state to true 
     const handleClickOpen = () => {
         setOpen(true); 
     }
@@ -44,7 +45,7 @@ function AddCustomer( { addCustomer }) {
             email: '', 
             phone: ''
         })
-        setOpen(false)
+        setOpen(false)   
     }
 
     //common function to save each input data into customer state
