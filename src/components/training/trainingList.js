@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { AgGridReact } from "ag-grid-react"
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit'
+
 
 import { format, parseISO } from "date-fns";
 
@@ -36,7 +40,25 @@ function Trainings () {
         },
         {headerName: 'Duration (min)', field: 'duration'},
         {headerName: 'Activity', field: 'activity'}, 
-        {headerName: 'Customer', valueGetter(params) { return params.data.customer.firstname + ' ' + params.data.customer.lastname}}
+        {headerName: 'Customer', valueGetter(params) { return params.data.customer.firstname + ' ' + params.data.customer.lastname}}, 
+        {
+            headerName: '', 
+            field: 'links.href',
+            width: 80, 
+            cellRenderer: params => 
+            <IconButton>
+                <EditIcon color="primary"/>
+            </IconButton>
+        },
+        {
+            headerName: '', 
+            field: 'links.href',
+            width: 80, 
+            cellRenderer: params => 
+            <IconButton>
+                <DeleteIcon color="error"/>
+            </IconButton>
+        }
     ])
 
     //setting common properties for all columns
@@ -47,6 +69,7 @@ function Trainings () {
 
     return (
     <div className="ag-theme-material" style={{ height: 600, width: '90%', margin: 70}}>
+        <h2>List of trainings</h2>
         <AgGridReact
         defaultColDef={defaultColumnProps}
         columnDefs={columns}
