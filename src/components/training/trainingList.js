@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { AgGridReact } from "ag-grid-react"
 
+import { format, parseISO } from "date-fns";
+
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import "ag-grid-community/dist/styles/ag-theme-material.css";
 
@@ -28,7 +30,10 @@ function Trainings () {
 
     //defining the each columns 
     const [columns] = useState([
-        {headerName: 'Date', field: 'date'},
+        {headerName: 'Date', field: 'date', type: 'date', filter: 'agDateColumnFilter',
+        cellRenderer: (params) =>
+        format(parseISO(params.data.date), "dd-MM-yyyy"),
+        },
         {headerName: 'Duration (min)', field: 'duration'},
         {headerName: 'Activity', field: 'activity'}, 
         {headerName: 'Customer', valueGetter(params) { return params.data.customer.firstname + ' ' + params.data.customer.lastname}}

@@ -19,6 +19,7 @@ function App() {
         <Typography variant='h6'>Trainers house</Typography>
       </Toolbar>
     </AppBar>
+    
    <Trainings />
   </div>
   );
