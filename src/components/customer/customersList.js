@@ -29,6 +29,24 @@ function Customers () {
         .catch(err => console.error(err))
     }
 
+    //adds customer to database
+    const addCustomer = (newCustomer) => {
+        fetch('https://customerrest.herokuapp.com/api/customers', {
+            method: 'POST', 
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify(newCustomer)
+        })
+        .then(response => {
+            if(response.ok) {
+                fetchCustomers(); 
+            } else {
+                alert("Something went wrong!")
+            }
+        })
+        .catch(err => console.error(err))
+    }
+
+
     //defining each column for ag-grid table component
     const [columns] = useState([
         {headerName: 'First name', field: 'firstname', width: 130},
@@ -69,7 +87,7 @@ function Customers () {
     return (
         <div className="ag-theme-material" style={{ height: 600, width: '90%', margin: 70}}>
             <h2>List of customers</h2>
-            <AddCustomer />
+            <AddCustomer addCustomer={addCustomer}/>
             <AgGridReact
             defaultColDef={defaultColumnProps}
             columnDefs={columns}
