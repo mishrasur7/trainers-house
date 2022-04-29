@@ -32,24 +32,32 @@ function Traininglist () {
         .catch(err => console.error(err))
     }
 
+    //add training to customer
+    const addTraining = (newTraining) => {
+        fetch('https://customerrest.herokuapp.com/api/trainings', {
+            method: 'POST', 
+            headers: { 'Content-Type': 'application/json'}, 
+            body: JSON.stringify(newTraining)
+        })
+        .then(response => {
+            if(response.ok) {
+                fetchTrainings(); 
+            } else {
+                alert('Something went wrong!')
+            }
+        })
+        .catch(err => console.error(err))
+    }
+
     //defining the each columns 
     const [columns] = useState([
         {headerName: 'Date', field: 'date', type: 'date', filter: 'agDateColumnFilter',
         cellRenderer: (params) =>
-        format(parseISO(params.data.date), "dd-MM-yyyy"),
+        format(parseISO(params.data.date), "dd.MM.yyyy"),
         },
         {headerName: 'Duration (min)', field: 'duration'},
         {headerName: 'Activity', field: 'activity'}, 
-        {headerName: 'Customer', valueGetter(params) { return params.data.customer.firstname + ' ' + params.data.customer.lastname}}, 
-        {
-            headerName: '', 
-            field: 'links.href',
-            width: 80, 
-            cellRenderer: params => 
-            <IconButton>
-                <EditIcon color="primary"/>
-            </IconButton>
-        },
+        {headerName: 'Customer', valueGetter(params) { return params.data.customer.firstname + ' ' + params.data.customer.lastname}},
         {
             headerName: '', 
             field: 'links.href',
@@ -70,7 +78,7 @@ function Traininglist () {
     return (
     <div className="ag-theme-material" style={{ height: 550, width: '90%', margin: 70}}>
         <h2>List of trainings</h2>
-        <Addtraining />
+        <Addtraining addTraining={addTraining}/>
         <AgGridReact
         defaultColDef={defaultColumnProps}
         columnDefs={columns}
