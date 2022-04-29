@@ -2,15 +2,22 @@ import React, { useState, useEffect, useMemo} from "react";
 import { AgGridReact } from 'ag-grid-react';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit'
+import Snackbar from '@mui/material/Snackbar';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import "ag-grid-community/dist/styles/ag-theme-material.css";
-import AddCustomer from "./addCustomer";
+import AddCustomer from "./Addcustomer";
+import Updatecustomer from "./Updatecustomer";
 
-function Customers () {
+function Customerlist () {
     //array state to save all customers
     const[customers, setCustomers] = useState([]);
+
+    //sets open state to false
+    const[open, setOpen] = useState(false); 
+
+    //sets notification message upon deletion and edition
+    const[message, setMessage] = useState(''); 
 
     //fetch customers after the first render
    useEffect(() => { fetchCustomers(); }, [])
@@ -38,7 +45,8 @@ function Customers () {
         })
         .then(response => {
             if(response.ok) {
-                fetchCustomers(); 
+                fetchCustomers();
+                setMessage('Customer added successfully!')
             } else {
                 alert("Something went wrong!")
             }
@@ -46,6 +54,41 @@ function Customers () {
         .catch(err => console.error(err))
     }
 
+    //update customer details
+    const updateCustomer = (updatedCustomer, link) => {
+        fetch(link[0].href, {
+            method: 'PUT', 
+            headers: { 'Content-Type': 'application/json'}, 
+            body: JSON.stringify(updatedCustomer)
+        })
+        .then(response => {
+            if(response.ok) {
+                setOpen(true);
+                setMessage("Customer updated successfully") 
+                fetchCustomers(); 
+            } else {
+                alert('Someting went wrong!')
+            }
+        })
+        .catch(err => console.error(err))
+    }
+
+    //delete customer from database
+    const deleteCustomer = (link) => {
+        if(window.confirm('Are you sure that you want to delete this customer?')) {
+            fetch(link.data.links[0].href, {method: 'DELETE'})
+            .then(response => {
+                if(!response.ok) {
+                    alert('Something went wrong in deletion!') 
+                } else {
+                    setOpen(true);
+                    setMessage("Customer deleted successfully") 
+                    fetchCustomers();
+                }
+            })
+            .catch(err => console.error(err))
+        }
+    }
 
     //defining each column for ag-grid table component
     const [columns] = useState([
@@ -58,19 +101,17 @@ function Customers () {
         {headerName: 'Phone number', field: 'phone', width: 175},
         {
             headerName: '', 
-            field: 'links.href',
+            field: 'links',
             width: 80, 
-            cellRenderer: params => 
-            <IconButton>
-                <EditIcon color="primary"/>
-            </IconButton>
+            cellRenderer: params =>
+            <Updatecustomer params={params} updateCustomer={updateCustomer}/> 
         },
         {
             headerName: '', 
-            field: 'links.href',
+            field: 'links',
             width: 80, 
             cellRenderer: params => 
-            <IconButton>
+            <IconButton onClick={() => deleteCustomer(params)}>
                 <DeleteIcon color="error"/>
             </IconButton>
         }
@@ -87,7 +128,7 @@ function Customers () {
     return (
         <div className="ag-theme-material" style={{ height: 600, width: '90%', margin: 70}}>
             <h2>List of customers</h2>
-            <AddCustomer addCustomer={addCustomer}/>
+            <AddCustomer addCustomer={addCustomer} />
             <AgGridReact
             defaultColDef={defaultColumnProps}
             columnDefs={columns}
@@ -96,8 +137,14 @@ function Customers () {
             paginationPageSize={10}
             suppressCellFocus={true}
             />
+            <Snackbar 
+                open={open}
+                autoHideDuration={3000}
+                onClose={() => setOpen(false)}
+                message={message}
+            />
         </div>
         ); 
 }
 
-export default Customers; 
+export default Customerlist; 

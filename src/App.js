@@ -7,8 +7,8 @@ import {
   Link
 } from 'react-router-dom'
 import './App.css';
-import Customers from './components/customer/customersList';
-import Trainings from './components/training/trainingList';
+import Customerlist from './components/customer/Customerlist';
+import Traininglist from './components/training/Traininglist';
 
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
       </Toolbar>
     </AppBar>
       <Routes>
-        <Route exact path='/' element={<Customers />} />
-        <Route exact path='/trainings' element={<Trainings />} />
+        <Route exact path='/' element={<Customerlist />} />
+        <Route exact path='/trainings' element={<Traininglist />} />
       </Routes>
     </BrowserRouter>
   </div>

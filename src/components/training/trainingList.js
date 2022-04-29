@@ -4,13 +4,12 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit'
 
-
 import { format, parseISO } from "date-fns";
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import "ag-grid-community/dist/styles/ag-theme-material.css";
 
-function Trainings () {
+function Traininglist () {
 
     //trainings state to save all training data 
     const[trainings, setTrainings] = useState([]);
@@ -82,4 +81,4 @@ function Trainings () {
     ); 
 }
 
-export default Trainings; 
+export default Traininglist; 

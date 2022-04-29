@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
+import EditIcon from '@mui/icons-material/Edit';
 
 
-function Addcustomer( { addCustomer }) {
+function Updatecustomer( { params, updateCustomer }) {
     //customer object state to save customer details
     const [customer, setCustomer] = useState({
         firstname: '', 
@@ -25,6 +26,15 @@ function Addcustomer( { addCustomer }) {
 
     //sets open state to true 
     const handleClickOpen = () => {
+        setCustomer({
+            firstname: params.data.firstname, 
+            lastname: params.data.lastname, 
+            streetaddress: params.data.streetaddress, 
+            postcode: params.data.postcode, 
+            city: params.data.city, 
+            email: params.data.email, 
+            phone: params.data.phone
+        })
         setOpen(true); 
     }
 
@@ -35,17 +45,8 @@ function Addcustomer( { addCustomer }) {
 
     //saves customer data and closes the dialogue box
     const handleSave = () => {
-        addCustomer(customer); 
-        setCustomer({
-            firstname: '', 
-            lastname: '', 
-            streetaddress: '', 
-            postcode: '', 
-            city: '', 
-            email: '', 
-            phone: ''
-        })  
-        setOpen(false) 
+        updateCustomer(customer, params.value); 
+        setOpen(false)   
     }
 
     //common function to save each input data into customer state
@@ -55,13 +56,13 @@ function Addcustomer( { addCustomer }) {
 
     return (
         <>
-        <Button variant="contained" onClick={handleClickOpen} style={{marginLeft: 1050}}>
-            Add Customer
-        </Button>
+        <IconButton onClick={handleClickOpen}>
+            <EditIcon color="primary"/>
+        </IconButton>
         <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>Add new customer</DialogTitle>
+            <DialogTitle>Update customer</DialogTitle>
             <DialogContentText style={{marginLeft: 25}}>
-                Please fill in each customer details to add facts about customer.
+                Please update as per your wish.
             </DialogContentText>
             <DialogContent>
             <TextField 
@@ -137,4 +138,4 @@ function Addcustomer( { addCustomer }) {
     ); 
 }
 
-export default Addcustomer; 
+export default Updatecustomer; 
