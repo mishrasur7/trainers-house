@@ -1,3 +1,4 @@
+//dependencies imported
 import React, { useState } from "react";
 import { Button } from "@mui/material";
 import Dialog from '@mui/material/Dialog';
@@ -55,7 +56,7 @@ function Addcustomer( { addCustomer }) {
 
     return (
         <>
-        <Button variant="contained" onClick={handleClickOpen} style={{marginLeft: 1050}}>
+        <Button variant="contained" onClick={handleClickOpen} style={{marginLeft: 800}}>
             Add Customer
         </Button>
         <Dialog open={open} onClose={handleClose}>
