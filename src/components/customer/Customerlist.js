@@ -46,7 +46,7 @@ function Customerlist () {
         .then(response => {
             if(response.ok) {
                 fetchCustomers();
-                setMessage('Customer added successfully!')
+                setMessage('Customer added successfully')
             } else {
                 alert("Something went wrong!")
             }
