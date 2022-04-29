@@ -8,6 +8,7 @@ import { format, parseISO } from "date-fns";
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import "ag-grid-community/dist/styles/ag-theme-material.css";
+import Addtraining from "./Addtraining";
 
 function Traininglist () {
 
@@ -67,8 +68,9 @@ function Traininglist () {
     })); 
 
     return (
-    <div className="ag-theme-material" style={{ height: 600, width: '90%', margin: 70}}>
+    <div className="ag-theme-material" style={{ height: 550, width: '90%', margin: 70}}>
         <h2>List of trainings</h2>
+        <Addtraining />
         <AgGridReact
         defaultColDef={defaultColumnProps}
         columnDefs={columns}

@@ -48,7 +48,7 @@ function Customerlist () {
                 fetchCustomers();
                 setMessage('Customer added successfully')
             } else {
-                alert("Something went wrong!")
+                alert('Something went wrong!')
             }
         })
         .catch(err => console.error(err))
@@ -64,7 +64,7 @@ function Customerlist () {
         .then(response => {
             if(response.ok) {
                 setOpen(true);
-                setMessage("Customer updated successfully") 
+                setMessage('Customer updated successfully'); 
                 fetchCustomers(); 
             } else {
                 alert('Someting went wrong!')
@@ -82,7 +82,7 @@ function Customerlist () {
                     alert('Something went wrong in deletion!') 
                 } else {
                     setOpen(true);
-                    setMessage("Customer deleted successfully") 
+                    setMessage('Customer deleted successfully') 
                     fetchCustomers();
                 }
             })

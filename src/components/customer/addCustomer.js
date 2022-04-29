@@ -35,7 +35,7 @@ function Addcustomer( { addCustomer }) {
 
     //saves customer data and closes the dialogue box
     const handleSave = () => {
-        addCustomer(customer); 
+        addCustomer(customer);
         setCustomer({
             firstname: '', 
             lastname: '', 
