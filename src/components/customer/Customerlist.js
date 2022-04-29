@@ -6,7 +6,7 @@ import Snackbar from '@mui/material/Snackbar';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import "ag-grid-community/dist/styles/ag-theme-material.css";
-import AddCustomer from "./Addcustomer";
+import AddCustomer from "./addcustomer";
 import Updatecustomer from "./Updatecustomer";
 
 function Customerlist () {
