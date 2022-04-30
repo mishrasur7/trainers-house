@@ -1,4 +1,4 @@
-
+//dependencies imported
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Button, IconButton } from "@mui/material";
 import { AgGridReact } from 'ag-grid-react';
@@ -8,7 +8,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 function ExportCSV ( { customers }) {
 
-     //gridref for referencing the api
+     //gridref for referencing the api which uses the useRef hook function
      const gridRef = useRef();
 
      //returns the document body
