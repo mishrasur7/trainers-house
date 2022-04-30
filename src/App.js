@@ -9,6 +9,8 @@ import {
 import './App.css';
 import Customerlist from './components/customer/Customerlist';
 import Traininglist from './components/training/Traininglist';
+import Calendar from './components/Calender';
+import Statistics from './components/Statistics';
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Customerlist />} />
         <Route exact path='/trainings' element={<Traininglist />} />
+        <Route exact path='/calendar' element={<Calendar />} />
+        <Route exact path='/statistics' element={<Statistics />} />
+        
       </Routes>
     </BrowserRouter>
   </div>
