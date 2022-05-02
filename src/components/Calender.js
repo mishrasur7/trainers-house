@@ -19,20 +19,20 @@ function Calendar () {
             } else throw new Error (response.status)
         })
         .then(responseData => {
-            let dateArray = []; 
+            let dataArray = []; 
             for(let i = 0; i < responseData.length; i++) {
-                dateArray.push({
+                dataArray.push({
                     start: new Date(responseData[i].date),
                     end: new Date(responseData[i].date + responseData[i].date * 60000), 
                     title: `${responseData[i].activity} / ${responseData[i].customer.firstname}`
                 }); 
             }
-            setEvents({events : dateArray})
+            setEvents({events : dataArray})
         }
             )
         .catch(err => console.error(err))
     }, [])
-    
+
 
     return (
     <>
