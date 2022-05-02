@@ -1,15 +1,53 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
+import interactionPlugin from '@fullcalendar/interaction';
 
 function Calendar () {
 
+    //events array state to save events 
+    const [events, setEvents] = useState([]);
+
+    //fetching data upon render
+    //stores start, end and title in dateArray
+    //sets events to dateArray 
+    useEffect(() => {
+        fetch('https://customerrest.herokuapp.com/gettrainings')
+        .then(response => {
+            if(response.ok) {
+                return response.json(); 
+            } else throw new Error (response.status)
+        })
+        .then(responseData => {
+            let dateArray = []; 
+            for(let i = 0; i < responseData.length; i++) {
+                dateArray.push({
+                    start: new Date(responseData[i].date),
+                    end: new Date(responseData[i].date + responseData[i].date * 60000), 
+                    title: `${responseData[i].activity} / ${responseData[i].customer.firstname}`
+                }); 
+            }
+            setEvents({events : dateArray})
+        }
+            )
+        .catch(err => console.error(err))
+    }, [])
+    
+
     return (
     <>
+    <div style={{margin: 100 }}>
      <FullCalendar
-        plugins={[ dayGridPlugin ]}
+        plugins={[ dayGridPlugin, interactionPlugin ]}
         initialView="dayGridMonth"
+        events={events}
+        headerToolbar={{
+            start: 'prev, next, today',
+            center: 'title', 
+            end: 'dayGridMonth, dayGridWeek, dayGridDay'
+        }}
       />
+    </div>
     </>
     ); 
 }
