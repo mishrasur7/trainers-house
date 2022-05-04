@@ -60,7 +60,7 @@ function Statistics () {
                     label: 'Duration',
                     data: durations,
                     borderColor: 'white',
-                    backgroundColor: 'orange'
+                    backgroundColor: '#30AADD'
                   }
                 ]
               })

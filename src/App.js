@@ -12,13 +12,12 @@ import Traininglist from './components/training/Traininglist';
 import Calendar from './components/Calender';
 import Statistics from './components/Statistics';
 
-
 function App() {
   return (
     <div className="App">
     <BrowserRouter>
     <AppBar>
-      <Toolbar>
+      <Toolbar className='toolbar'>
         <Link to='/' style={{textDecoration:'none', marginLeft: 150, color:'white', fontWeight:'bold', fontSize: 20}}>Customers</Link>
         <Link to='/trainings' style={{textDecoration:'none', marginLeft: 100, color:'white', fontWeight:'bold', fontSize: 20}}>Trainings</Link>
         <Link to='/calendar' style={{textDecoration:'none', marginLeft: 100, color:'white', fontWeight:'bold', fontSize: 20}}>Calendar</Link>
