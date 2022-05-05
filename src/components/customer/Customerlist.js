@@ -1,5 +1,5 @@
 //dependencies imported
-import React, { useState, useEffect, useMemo, useCallback, useRef} from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { AgGridReact } from 'ag-grid-react';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -130,7 +130,6 @@ function Customerlist () {
     //displaying data in html page with ag-grid component
     return (
         <div className="ag-theme-material" style={{ height: 600, width: '90%', margin: 70}}>
-            <h2>List of customers</h2>
             <ExportCSV customers={customers}/>
             <AddCustomer addCustomer={addCustomer} />
             <AgGridReact
