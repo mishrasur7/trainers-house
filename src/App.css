@@ -38,10 +38,9 @@
   }
 }
 
-
-
 .toolbar > .link:hover {
   background-color: black;
   color: 'blue';
   padding: 10px;
 }
+

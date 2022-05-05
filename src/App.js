@@ -4,7 +4,7 @@ import {
   BrowserRouter,
   Routes, 
   Route, 
-  Link
+  NavLink
 } from 'react-router-dom'
 import './App.css';
 import Customerlist from './components/customer/Customerlist';
@@ -28,10 +28,10 @@ function App() {
     <BrowserRouter>
     <AppBar>
       <Toolbar className='toolbar'>
-        <Link to='/' style={linkStyle} className='link'>Customers </Link>
-        <Link to='/trainings' style={linkStyle} className='link'>Trainings</Link>
-        <Link to='/calendar' style={linkStyle} className='link'>Calendar</Link>
-        <Link to='/statistics' style={linkStyle} className='link'>Statistics</Link>
+        <NavLink to='/' style={linkStyle} className='link'>Customers </NavLink>
+        <NavLink to='/trainings' style={linkStyle} className='link'>Trainings</NavLink>
+        <NavLink to='/calendar' style={linkStyle} className='link'>Calendar</NavLink>
+        <NavLink to='/statistics' style={linkStyle} className='link'>Statistics</NavLink>
       </Toolbar>
     </AppBar>
       <Routes>
