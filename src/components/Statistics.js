@@ -60,7 +60,7 @@ function Statistics () {
                     label: 'Duration',
                     data: durations,
                     borderColor: 'white',
-                    backgroundColor: '#30AADD'
+                    backgroundColor: '#1976d2'
                   }
                 ]
               })
@@ -85,8 +85,8 @@ function Statistics () {
           title: {
             display: true,
             text: 'Training activities and duration',
-          },
-        },
+          }
+        }
       };
     
     return(
