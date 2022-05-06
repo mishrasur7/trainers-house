@@ -12,7 +12,7 @@ function Calendar () {
     //stores start, end and title in dateArray
     //sets events to dateArray 
     useEffect(() => {
-        fetch('https://customerrest.herokuapp.com/gettrainings')
+        fetch(process.env.REACT_APP_API_CUSTOMERS_TRAININGS)
         .then(response => {
             if(response.ok) {
                 return response.json(); 

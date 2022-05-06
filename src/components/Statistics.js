@@ -45,7 +45,7 @@ function Statistics () {
     const fetchData = () => {
         const activities = []
         const durations = [];
-        fetch('https://customerrest.herokuapp.com/gettrainings')
+        fetch(process.env.REACT_APP_API_CUSTOMERS_TRAININGS)
         .then(response => {
             if(response.ok) {
                 return response.json(); 
@@ -87,13 +87,13 @@ function Statistics () {
         },
         title: {
           display: true,
-          text: 'Training activities and duration',
+          text: 'Training activities and duration in minutes',
         }
       }
     };
     
     return(
-        <div style={{width:'80%', height:'50%', margin: 100}}>
+        <div style={{width:'75%', height:'35%', margin: 120}}>
             <Bar data={chartData} options={options}/>
          </div>)
 }

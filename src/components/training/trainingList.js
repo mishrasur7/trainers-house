@@ -24,7 +24,7 @@ function Traininglist () {
     
     //fetching training data from the api
     const fetchTrainings = () => {
-        fetch('https://customerrest.herokuapp.com/gettrainings')
+        fetch(process.env.REACT_APP_API_CUSTOMERS_TRAININGS)
         .then(response => {
             if(response.ok) {
                 return response.json(); 
@@ -38,7 +38,7 @@ function Traininglist () {
 
     //add training to customer
     const addTraining = (newTraining) => {
-        fetch('https://customerrest.herokuapp.com/api/trainings', {
+        fetch(process.env.REACT_APP_API_TRAININGS, {
             method: 'POST', 
             headers: { 'Content-Type': 'application/json'}, 
             body: JSON.stringify(newTraining)
@@ -56,7 +56,7 @@ function Traininglist () {
     //delete training of customer
     const deleteTraining = (link) => {
         if(window.confirm('Are you sure that you want to delete this training?')) {
-            fetch('https://customerrest.herokuapp.com/api/trainings/' + link.data.id, {
+            fetch(process.env.REACT_APP_API_TRAININGS + '/' + link.data.id, {
                 method: 'DELETE'
             })
             .then(response => {
@@ -98,7 +98,7 @@ function Traininglist () {
     })); 
 
     return (
-    <div className="ag-theme-material" style={{ height: 550, width: '90%', margin: 70}}>
+    <div className="ag-theme-material" style={{ height: 550, width: '90%', margin: 'auto'}}>
         <h2 style={{padding: 10}}>List of trainings</h2>
         <Addtraining addTraining={addTraining}/>
         <AgGridReact
