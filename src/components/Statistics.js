@@ -5,6 +5,7 @@ import {
     CategoryScale,
     LinearScale,
     BarElement,
+    Title,
     Tooltip, 
     Legend
   } from 'chart.js';
@@ -16,6 +17,7 @@ ChartJS.register(
     CategoryScale,
     LinearScale,
     BarElement,
+    Title,
     Tooltip, 
     Legend
   );
@@ -31,7 +33,8 @@ function Statistics () {
             borderColor: '',
             backgroundColor: ''
           }
-        ]
+        ], 
+        
       });
 
     //useEffect function to render data once the page is loaded
@@ -57,7 +60,7 @@ function Statistics () {
                 labels:activities,
                 datasets: [
                   {
-                    label: 'Duration',
+                    label: 'Duration (min)',
                     data: durations,
                     borderColor: 'white',
                     backgroundColor: '#1976d2'
@@ -71,23 +74,23 @@ function Statistics () {
 
     //defining the axis, bar border width, responsiveness, position and title text
     const options = {
-        indexAxis: 'x',
-        elements: {
-          bar: {
-            borderWidth: 1,
-          },
+      indexAxis: 'x',
+      elements: {
+        bar: {
+          borderWidth: 1,
         },
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'right',
-          },
-          title: {
-            display: true,
-            text: 'Training activities and duration',
-          }
+      },
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'right',
+        },
+        title: {
+          display: true,
+          text: 'Training activities and duration',
         }
-      };
+      }
+    };
     
     return(
         <div style={{width:'80%', height:'50%', margin: 100}}>
