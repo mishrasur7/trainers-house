@@ -95,7 +95,7 @@ function Traininglist () {
     const defaultColumnProps = useMemo(() => ({
         sortable: true,
         filter: true
-    })); 
+    }), []); 
 
     return (
     <div className="ag-theme-material" style={{ height: 550, width: '90%', margin: 100}}>

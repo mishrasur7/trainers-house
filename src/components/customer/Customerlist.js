@@ -125,7 +125,7 @@ function Customerlist () {
     const defaultColumnProps = useMemo(() => ({
         sortable: true,
         filter: true
-    }));
+    }), []);
 
     //displaying data in html page with ag-grid component
     return (
