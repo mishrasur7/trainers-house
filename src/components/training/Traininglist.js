@@ -98,8 +98,7 @@ function Traininglist () {
     })); 
 
     return (
-    <div className="ag-theme-material" style={{ height: 550, width: '90%', margin: 'auto'}}>
-        <h2 style={{padding: 10}}>List of trainings</h2>
+    <div className="ag-theme-material" style={{ height: 550, width: '90%', margin: 100}}>
         <Addtraining addTraining={addTraining}/>
         <AgGridReact
         defaultColDef={defaultColumnProps}

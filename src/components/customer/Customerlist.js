@@ -130,7 +130,6 @@ function Customerlist () {
     //displaying data in html page with ag-grid component
     return (
         <div className="ag-theme-material" style={{ height: 500, width: '90%', margin: 70}}>
-            <h2 style={{padding: 10}}>List of customers</h2>
             <ExportCSV customers={customers}/>
             <AddCustomer addCustomer={addCustomer} />
             <AgGridReact
