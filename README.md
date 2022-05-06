@@ -1,3 +1,9 @@
+# Information about this application
+Customers can be added, edited, and deleted. Trainings can be saved for customers and trainings can be deleted as well. Trainings and activity can be seen in a calendar monthly, weekly, daily. Statistics of time duration of training and activities are shown in bar chart. In addition to this features, the customers data can be downloaded as CSV file. This application is deployed in Netlify.
+
+# Can be accessed from the following url
+https://master--tranquil-raindrop-eaf7a3.netlify.app/statistics
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
