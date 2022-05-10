@@ -31,7 +31,7 @@ function App() {
     <BrowserRouter>
     <AppBar>
       <Toolbar className='toolbar'>
-        <NavLink to='/' style= {linkStyle}>Customers </NavLink>
+        <NavLink to='/' style= {linkStyle} className='link'>Customers </NavLink>
         <NavLink to='/trainings' style={linkStyle} className='link'>Trainings</NavLink>
         <NavLink to='/calendar' style={linkStyle} className='link'>Calendar</NavLink>
         <NavLink to='/statistics' style={linkStyle} className='link'>Statistics</NavLink>
