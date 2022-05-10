@@ -121,7 +121,7 @@ function Customerlist () {
         }
     ]);
 
-    //setting the common props for all columns
+    //setting common props for all columns
     const defaultColumnProps = useMemo(() => ({
         sortable: true,
         filter: true
