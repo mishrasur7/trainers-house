@@ -1,5 +1,5 @@
 # Information about this application
-Customers can be added, edited, and deleted. Trainings can be saved for customers and trainings can be deleted as well. Trainings and activity can be seen in a calendar on a monthly, weekly, and daily basis. Statistics of time duration of training and activities are shown in bar chart. In addition to this features, customers data can be downloaded as CSV file. This application is deployed in Netlify.
+This is an application for traning house. Customers can be added, edited, and deleted. Trainings can be saved for customers and trainings can be deleted as well. Trainings and activity can be seen in a calendar on a monthly, weekly, and daily basis. Statistics of time duration of training and activities are shown in bar chart. In addition to this features, customers data can be downloaded as CSV file. This application is deployed in Netlify.
 
 # Can be accessed from the following url
 https://master--tranquil-raindrop-eaf7a3.netlify.app/
