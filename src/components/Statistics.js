@@ -75,7 +75,8 @@ function Statistics () {
     //state to save all activities
     const[eachActivity, setEachActivity] = useState([]); 
 
-    //state to save total durations per activities 
+    //state to save total durations per activities
+    const [sumDuration, setSumDuration] = useState([]); 
 
 
     //defining the axis, bar border width, responsiveness, position and title text
