@@ -72,6 +72,12 @@ function Statistics () {
         .catch(err => console.error(err))
     }
 
+    //state to save all activities
+    const[eachActivity, setEachActivity] = useState([]); 
+
+    //state to save total durations per activities 
+
+
     //defining the axis, bar border width, responsiveness, position and title text
     const options = {
       indexAxis: 'x',
