@@ -80,6 +80,8 @@ function Statistics () {
 
 
     //defining the axis, bar border width, responsiveness, position and title text
+
+    //next task is to label x-axis and y-axis ??? 
     const options = {
       indexAxis: 'x',
       elements: {
