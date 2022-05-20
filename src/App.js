@@ -11,6 +11,7 @@ import Customerlist from './components/customer/Customerlist';
 import Traininglist from './components/training/Traininglist';
 import Calendar from './components/Calender';
 import Statistics from './components/Statistics';
+import Piechart from './components/piechart';
 
 //defining common styles to all links in toolbar
 const linkStyle = ({ isActive }) => {
@@ -43,7 +44,7 @@ function App() {
         <Route exact path='/trainings' element={<Traininglist />} />
         <Route exact path='/calendar' element={<Calendar />} />
         <Route exact path='/statistics' element={<Statistics />} />
-        
+        <Route exact path='/piechart' element={<Piechart />} />        
       </Routes>
     </BrowserRouter>
   </div>
