@@ -34,7 +34,7 @@ function App() {
         <NavLink to='/' style= {linkStyle} className='link'>Customers </NavLink>
         <NavLink to='/trainings' style={linkStyle} className='link'>Trainings</NavLink>
         <NavLink to='/calendar' style={linkStyle} className='link'>Calendar</NavLink>
-        <NavLink to='/statistics' style={linkStyle} className='link'>Statistics</NavLink>
+        <NavLink to='/statistics' style={linkStyle} className='link'>Bar Chart</NavLink>
       </Toolbar>
     </AppBar>
       <Routes>
