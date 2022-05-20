@@ -35,6 +35,7 @@ function App() {
         <NavLink to='/trainings' style={linkStyle} className='link'>Trainings</NavLink>
         <NavLink to='/calendar' style={linkStyle} className='link'>Calendar</NavLink>
         <NavLink to='/statistics' style={linkStyle} className='link'>Bar Chart</NavLink>
+        <NavLink to='/piechart' style={linkStyle} className='link'>Pie Chart</NavLink>
       </Toolbar>
     </AppBar>
       <Routes>
