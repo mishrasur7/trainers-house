@@ -11,7 +11,7 @@ import Customerlist from './components/customer/Customerlist';
 import Traininglist from './components/training/Traininglist';
 import Calendar from './components/Calender';
 import Statistics from './components/Statistics';
-import Piechart from './components/piechart';
+import BasicRating from './components/rating';
 
 //defining common styles to all links in toolbar
 const linkStyle = ({ isActive }) => {
@@ -36,7 +36,7 @@ function App() {
         <NavLink to='/trainings' style={linkStyle} className='link'>Trainings</NavLink>
         <NavLink to='/calendar' style={linkStyle} className='link'>Calendar</NavLink>
         <NavLink to='/statistics' style={linkStyle} className='link'>Bar Chart</NavLink>
-        <NavLink to='/piechart' style={linkStyle} className='link'>Pie Chart</NavLink>
+        <NavLink to='/rating' style={linkStyle} className='link'>Rating</NavLink>
       </Toolbar>
     </AppBar>
       <Routes>
@@ -44,7 +44,7 @@ function App() {
         <Route exact path='/trainings' element={<Traininglist />} />
         <Route exact path='/calendar' element={<Calendar />} />
         <Route exact path='/statistics' element={<Statistics />} />
-        <Route exact path='/piechart' element={<Piechart />} />        
+        <Route exact path='/rating' element={<BasicRating />} />        
       </Routes>
     </BrowserRouter>
   </div>
