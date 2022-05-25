@@ -9,8 +9,8 @@ import {
 import './App.css';
 import Customerlist from './components/customer/Customerlist';
 import Traininglist from './components/training/Traininglist';
-import Calendar from './components/Calender';
-import Statistics from './components/Statistics';
+import Calendar from './components/calender';
+import Statistics from './components/statistics';
 import BasicRating from './components/rating';
 
 //defining common styles to all links in toolbar
