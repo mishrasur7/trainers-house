@@ -1,4 +1,5 @@
-# View this project live on https://master--tranquil-raindrop-eaf7a3.netlify.app/
+# Live view
+https://master--tranquil-raindrop-eaf7a3.netlify.app/
 
 
 # Information about this application
