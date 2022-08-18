@@ -4,6 +4,41 @@
 # Information about this application
 This is an application for traning house. Customers can be added, edited, and deleted. Trainings can be saved for customers and trainings can be deleted as well. Trainings and activity can be seen in a calendar on a monthly, weekly, and daily basis. Statistics of time duration of training and activities are shown in bar chart. In addition to this features, customers data can be downloaded as CSV file. This application is deployed in Netlify.
 
+## Project structure 
+<pre>
+├── README.md
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+└── src
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── components
+    │   ├── Calender.js
+    │   ├── Rating.js
+    │   ├── Statistics.js
+    │   ├── customer
+    │   │   ├── Addcustomer.js
+    │   │   ├── Customerlist.js
+    │   │   ├── ExportCSV.js
+    │   │   └── Updatecustomer.js
+    │   └── training
+    │       ├── Addtraining.js
+    │       └── Traininglist.js
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    ├── reportWebVitals.js
+    └── setupTests.js
+</pre>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
