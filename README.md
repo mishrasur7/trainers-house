@@ -3,7 +3,7 @@ https://master--tranquil-raindrop-eaf7a3.netlify.app/
 
 
 # Information about this application
-This is an application for traning house. Customers can be added, edited, and deleted. Trainings can be saved for customers and trainings can be deleted as well. Trainings and activity can be seen in a calendar on a monthly, weekly, and daily basis. Statistics of time duration of training and activities are shown in bar chart. In addition to this features, customers data can be downloaded as CSV file. This application is deployed in Netlify.
+This is an application for training house. Customers can be added, edited, and deleted. Trainings can be saved for customers and trainings can be deleted as well. Trainings and activity can be seen in a calendar on a monthly, weekly, and daily basis. Statistics of time duration of training and activities are shown in bar chart. In addition to this features, customers data can be downloaded as CSV file. This application is deployed in Netlify.
 
 ## Project structure 
 <pre>
@@ -40,15 +40,25 @@ This is an application for traning house. Customers can be added, edited, and de
     └── setupTests.js
 </pre>
 
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Clone the repo
+```shell
+    git clone https://github.com/mishrasur7/trainers-house.git
+```
+## Change directory
+```shell
+    cd trainers-house
+```
+## Install dependencies
+```shell
+    npm install
+```
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+## Start the program
+```shell
+    npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
