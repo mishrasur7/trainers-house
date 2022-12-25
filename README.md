@@ -7,17 +7,7 @@ This is an application for training house. Customers can be added, edited, and d
 
 ## Project structure 
 <pre>
-├── README.md
-├── package-lock.json
-├── package.json
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
-└── src
+── src
     ├── App.css
     ├── App.js
     ├── App.test.js
@@ -33,11 +23,7 @@ This is an application for training house. Customers can be added, edited, and d
     │   └── training
     │       ├── Addtraining.js
     │       └── Traininglist.js
-    ├── index.css
-    ├── index.js
-    ├── logo.svg
-    ├── reportWebVitals.js
-    └── setupTests.js
+    └── index.css
 </pre>
 
 # Getting Started
